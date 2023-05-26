@@ -3,7 +3,7 @@ function isAnagram(s: string, t: string): boolean {
 let sLetters:{} = {};
 let tLetters:{} = {};
 
-[...s].forEach((c) => {
+[...s].forEach((c :string) => {
     if (sLetters[c]) {
         sLetters[c]++;
     } else {
@@ -11,7 +11,7 @@ let tLetters:{} = {};
     }
 });
 
-[...t].forEach((c) => {
+[...t].forEach((c :string) => {
     if (tLetters[c]) {
         tLetters[c]++;
     } else {
@@ -19,16 +19,16 @@ let tLetters:{} = {};
     }
 });
 
-let sortedS = Object.keys(sLetters).sort().reduce(
-  (obj, key) => { 
+let sortedS :{} = Object.keys(sLetters).sort().reduce(
+  (obj :{}, key :string) => { 
     obj[key] = sLetters[key]; 
     return obj;
   }, 
   {}
 );
 
-let sortedT = Object.keys(tLetters).sort().reduce(
-  (obj, key) => { 
+let sortedT :{} = Object.keys(tLetters).sort().reduce(
+  (obj :{}, key :string) => { 
     obj[key] = tLetters[key]; 
     return obj;
   }, 
